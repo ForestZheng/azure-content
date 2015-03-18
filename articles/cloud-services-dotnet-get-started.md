@@ -784,6 +784,11 @@ Try changing the port number used by the web project. Right-click the ContosoAds
 
 For another alternative that might resolve the problem, see the following  section.
 
+### When publish to Azure, the compiler gives error "Namespace prefix xdt is not defined."
+Environment: VS2013 Ultimate Edition
+Cause: xdt is defined in the namespace of XML-Document-Transform
+Fix: Manually open Web.config file and change <configuration> to <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">; Ctrl-Shit-B to rebuild and publish
+
 ### Other errors when running locally
 
 By default new Cloud Service projects use the Azure compute emulator express to simulate the Azure environment. This is a lightweight version of the full compute emulator, and under some conditions the full emulator will work when the express version does not.  
